@@ -24,6 +24,7 @@ dist-ssr
 *.sw?
 
 .env.local
+react-testing-notes.txt
 
 coverage/
 /test-results/
