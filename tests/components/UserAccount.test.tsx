@@ -15,7 +15,7 @@ describe("UserAccount", () => {
 
     // getByText(), For tags that have no role or non-interactive elements, like divs
     const userName = screen.getByText("Miguel");
-    expect(userName).toBeInTheDocument;
+    expect(userName).toBeInTheDocument();
   });
 
   it("should render the Edit button when user is Admin", () => {
