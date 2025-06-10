@@ -1,7 +1,7 @@
-import { it, expect, describe } from "vitest";
+// import { it, expect, describe } from "vitest"; // MOVED TO vitest.config.ts
 import { render, screen } from "@testing-library/react";
 import Greet from "../../src/components/Greet";
-import "@testing-library/jest-dom/vitest";
+// import "@testing-library/jest-dom/vitest"; // MOVED TO setup.ts, and this file is imported to vitest.config.ts
 
 describe("Greet", () => {
   it(" should render Hello with the name when name is provided", () => {
