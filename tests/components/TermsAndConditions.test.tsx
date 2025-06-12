@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import TermsAndConditions from "../../src/components/TermsAndConditions";
+import userEvent from "@testing-library/user-event";
 
 describe("TermsAndConditions", () => {
   it("should render with correct text and initial state", () => {
@@ -20,5 +21,19 @@ describe("TermsAndConditions", () => {
     expect(button).toBeInTheDocument();
     // expect(button).toHaveTextContent(/submit/i);
     expect(button).toBeDisabled();
+  });
+
+  // USER INTERACTIONS
+  it("should enable the button when the checkbox is checked", async () => {
+    // Arrange part
+    render(<TermsAndConditions />);
+
+    // Action
+    const checkbox = screen.getByRole("checkbox");
+    const user = userEvent.setup();
+    await user.click(checkbox);
+
+    // Assert
+    expect(screen.getByRole("button")).toBeEnabled();
   });
 });
